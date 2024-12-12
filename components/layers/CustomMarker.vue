@@ -28,11 +28,12 @@ watch(
         el.style.width = '30px';
         el.style.height = '30px';
 
+        const coordinates = feature.geometry.coordinates;
         const marker = new maplibregl.Marker({ element: el })
-          .setLngLat(feature.geometry.coordinates)
+          .setLngLat(coordinates)
           .setPopup(
             new maplibregl.Popup().setHTML(
-              `<p>Coordinates: ${feature.geometry.coordinates}</p>`
+              `<p>Lat: ${coordinates[1]}</p><p>Long: ${coordinates[0]}</p>`
             )
           )
           .addTo(props.map);

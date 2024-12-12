@@ -59,7 +59,8 @@ const toggleLayer = (layerId) => {
     activeLayers.value = [...activeLayers.value, layerId];
   }
 
-  if (activeLayers.value.length === 1 && activeLayers.value[0] === 'terrain-data' && layerId === 'terrain-data') {
+
+  if (layerId === 'terrain-data' && activeLayers.value.includes('terrain-data')) {
     map.value.flyTo({
       center: [106.8456, -6.2088],
       zoom: 14,

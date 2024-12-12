@@ -13,7 +13,6 @@ const layerId = 'terrain-data';
 
 onMounted(() => {
   if (props.map) {
-
     props.map.addSource('contours', {
       type: 'vector',
       url: `https://api.maptiler.com/tiles/contours/tiles.json?key=${apiKey}`,
