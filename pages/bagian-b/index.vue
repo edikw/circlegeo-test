@@ -5,15 +5,19 @@
     </div>
     <div ref="mapContainer" class="map-container"></div>
     <div class="flex gap-2 my-6 justify-center">
-      <button class="btn" @click="toggleLayer('line-layer')"> Line Layer</button>
-      <button class="btn" @click="toggleLayer('polygon-layer')"> Polygon Layer</button>
-      <button class="btn" @click="toggleLayer('circle-source')"> Circle Layer</button>
-      <button class="btn" @click="toggleLayer('custom-marker')"> Custom Marker</button>
-      <button class="btn" @click="toggleLayer('default-marker')"> Default Marker</button>
-      <button class="btn" @click="toggleLayer('vector-line-layer')"> Vector Line Layer</button>
+      <button :class="handleActive('line-layer') ? 'btn' : 'btn-border'" @click="toggleLayer('line-layer')"> Line
+        Layer</button>
+      <button :class="handleActive('polygon-layer') ? 'btn' : 'btn-border'" @click="toggleLayer('polygon-layer')">
+        Polygon Layer</button>
+      <button :class="handleActive('circle-layer') ? 'btn' : 'btn-border'" @click="toggleLayer('circle-source')"> Circle
+        Layer</button>
+      <button :class="handleActive('custom-marker') ? 'btn' : 'btn-border'" @click="toggleLayer('custom-marker')">
+        Custom Marker</button>
+      <button :class="handleActive('default-marker') ? 'btn' : 'btn-border'" @click="toggleLayer('default-marker')">
+        Default Marker</button>
+      <button :class="handleActive('vector-line-layer') ? 'btn' : 'btn-border'"
+        @click="toggleLayer('vector-line-layer')"> Vector Line Layer</button>
     </div>
-
-
     <div v-if="isMapReady" style="display:flex;">
       <LineLayer :map="map" />
       <PolygonLayer :map="map" />
@@ -34,10 +38,19 @@ const map = ref(null);
 const isMapReady = ref(false);
 const isMarkerCustom = ref(false);
 const isMarkerDefault = ref(false);
+const activeLayers = ref([]);
 
+const handleActive = (layerId) => {
+  return activeLayers.value.includes(layerId);
+};
 
 const toggleLayer = (layerId) => {
   if (!map.value) return;
+  if (activeLayers.value.includes(layerId)) {
+    activeLayers.value = activeLayers.value.filter((id) => id !== layerId);
+  } else {
+    activeLayers.value = [...activeLayers.value, layerId];
+  }
   if (layerId === 'custom-marker') {
     isMarkerCustom.value = !isMarkerCustom.value;
   }

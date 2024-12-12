@@ -10,10 +10,25 @@
         berupa perubahan warna latar belakang. Bagaimana Anda akan
         menerapkannya menggunakan CSS?
       </p>
-      <div class="my-6">
+      <div class="my-6 border rounded-md p-4">
         <button class="button_hover">Hover Me!</button>
+        <div class="text-sm mt-6">
+          <p class="mb-2">
+            1. Class <span class="font-bold">.button_hover</span> digunakan untuk mendefinisikan gaya dasar tombol.
+          </p>
+          <p class="mb-2">2. Selektor <span class="font-bold"> :hover</span> digunakan untuk mengubah warna latar
+            belakang tombol saat
+            kursor mouse
+            berada
+            di atasnya.
+          </p>
+          <p>3. Properti <span class="font-bold">transition</span> digunakan untuk menambahkan animasi transisi yang
+            halus saat warna
+            latar belakang
+            berubah.
+          </p>
+        </div>
       </div>
-      <p>Dengan menambah attribute class di button lalu styling menggunakan css</p>
     </div>
   </div>
 </template>

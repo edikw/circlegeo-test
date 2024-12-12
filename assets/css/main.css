@@ -4,7 +4,11 @@
 
 @layer components {
   .btn {
-    @apply px-4 py-2 bg-blue-500 rounded-lg text-white text-sm focus:outline-none
+    @apply px-4 py-2 bg-blue-500 rounded-lg text-white text-sm border hover:border-blue-500
+  }
+
+  .btn-border {
+    @apply px-4 py-2 bg-white rounded-lg text-blue-500 text-sm border border-blue-500 hover:bg-blue-500 hover:text-white
   }
 
 }

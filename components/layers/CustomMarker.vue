@@ -16,39 +16,38 @@ const handleJson = () => {
   );
 };
 
-onMounted(() => {
-  watch(
-    () => props.isMarkerCustom,
-    (newVal) => {
-      if (newVal) {
-        const features = handleJson();
+watch(
+  () => props.isMarkerCustom,
+  (newVal) => {
+    if (newVal) {
 
-        features.forEach((feature) => {
-          const markerImage = '/images/logo.png';
 
-          const el = document.createElement('div');
-          el.style.backgroundImage = `url(${markerImage})`;
-          el.style.width = '40px';
-          el.style.height = '40px';
-          el.style.backgroundSize = 'cover';
+      const features = handleJson();
 
-          const marker = new maplibregl.Marker(el)
-            .setLngLat(feature.geometry.coordinates)
-            .setPopup(
-              new maplibregl.Popup().setHTML(
-                `<p>Coordinates: ${feature.geometry.coordinates}</p>`
-              )
+      features.forEach((feature) => {
+        const el = document.createElement('div');
+        el.style.backgroundImage = 'url(https://circlegeo.com/wp-content/uploads/2023/05/Group-15.png)';
+        el.style.backgroundSize = 'cover';
+        el.style.backgroundRepeat = 'no-repeat';
+        el.style.width = '30px';
+        el.style.height = '30px';
+
+        const marker = new maplibregl.Marker({ element: el })
+          .setLngLat(feature.geometry.coordinates)
+          .setPopup(
+            new maplibregl.Popup().setHTML(
+              `<p>Coordinates: ${feature.geometry.coordinates}</p>`
             )
-            .addTo(props.map);
+          )
+          .addTo(props.map);
 
-          customMarkers.value.push(marker);
-        });
-      } else {
-        customMarkers.value.forEach((marker) => marker.remove());
-        customMarkers.value = [];
-      }
-    },
-    { immediate: true }
-  );
-});
+        customMarkers.value.push(marker);
+      });
+    } else {
+      customMarkers.value.forEach((marker) => marker.remove());
+      customMarkers.value = [];
+    }
+  },
+  { immediate: true }
+);
 </script>
