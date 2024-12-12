@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-maplibre'],
   components: [
     {
-      path: '~/components', // will get any components nested in let's say /components/test too
+      path: '~/components',
       pathPrefix: false
     }
   ],
@@ -19,6 +19,11 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  runtimeConfig: {
+    public: {
+      KEY: process.env.KEY,
     },
   },
 

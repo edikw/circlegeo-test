@@ -34,6 +34,10 @@
 import { ref, onMounted, defineEmits } from 'vue';
 import maplibregl from 'maplibre-gl';
 
+
+const config = useRuntimeConfig();
+const apiKey = config.public.KEY;
+
 const mapContainer = ref(null);
 const map = ref(null);
 const isMapReady = ref(false);
@@ -80,12 +84,13 @@ const toggleLayer = (layerId) => {
 };
 
 onMounted(() => {
+
   map.value = new maplibregl.Map({
     container: mapContainer.value,
     // bisa pilih salah satu dari style berikut
-    // style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
-    // style: 'https://api.maptiler.com/maps/streets/style.json?key=G5RlpCUY2cSj7PbF2Ca8',
-    style: 'https://demotiles.maplibre.org/style.json',
+    style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+    // style: 'https://demotiles.maplibre.org/style.json',
+    // style: `https://api.maptiler.com/maps/streets/style.json?key=${apiKey}`,
     center: [106.8456, -6.2088],
     zoom: 4,
   });
