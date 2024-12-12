@@ -32,5 +32,4 @@ export default defineNuxtConfig({
       KEY: process.env.KEY,
     },
   },
-
 })

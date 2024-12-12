@@ -34,7 +34,6 @@
 import { ref, onMounted, defineEmits } from 'vue';
 import maplibregl from 'maplibre-gl';
 
-
 const config = useRuntimeConfig();
 const apiKey = config.public.KEY;
 

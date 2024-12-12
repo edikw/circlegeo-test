@@ -1,3 +1,6 @@
+<template>
+  <div></div>
+</template>
 <script setup>
 import { onMounted, ref, watch } from 'vue';
 import maplibregl from 'maplibre-gl';
