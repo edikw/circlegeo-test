@@ -7,7 +7,6 @@ const props = defineProps({
   map: { type: Object, required: true },
   isMarkerCustom: { type: Boolean, required: true },
 });
-
 const customMarkers = ref([]);
 
 const handleJson = () => {
@@ -20,10 +19,7 @@ watch(
   () => props.isMarkerCustom,
   (newVal) => {
     if (newVal) {
-
-
       const features = handleJson();
-
       features.forEach((feature) => {
         const el = document.createElement('div');
         el.style.backgroundImage = 'url(https://circlegeo.com/wp-content/uploads/2023/05/Group-15.png)';

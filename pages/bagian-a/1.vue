@@ -3,7 +3,7 @@
     <div>
       <h1 class=" font-bold mb-4 cursor-pointer w-max" @click.prevent="$router.go(-1)">&#8592; Bagian A No 1 </h1>
     </div>
-    <div class="w-1/2 rounded-md p-4 mx-auto border">
+    <div class="md:w-1/2 rounded-md p-4 mx-auto border">
       <p>
         Anda sedang bekerja pada proyek web yang menggunakan HTML, CSS, dan
         JavaScript. Anda perlu membuat sebuah tombol yang memiliki efek hover

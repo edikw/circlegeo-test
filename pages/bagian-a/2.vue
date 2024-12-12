@@ -3,7 +3,7 @@
     <div>
       <h1 class=" font-bold mb-4 cursor-pointer w-max" @click.prevent="$router.go(-1)">&#8592; Bagian A No 2 </h1>
     </div>
-    <div class="w-1/2 rounded-md p-4 mx-auto border">
+    <div class="md:w-1/2 rounded-md p-4 mx-auto border">
       <p>
         Saat mengembangkan aplikasi web, Anda perlu mengoptimalkan performa
         dengan meminimalkan jumlah permintaan HTTP. Bagaimana Anda akan

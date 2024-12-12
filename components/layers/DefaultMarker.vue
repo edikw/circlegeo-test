@@ -1,8 +1,6 @@
 <script setup>
 import maplibregl from 'maplibre-gl';
-
 import { onMounted, ref, watch } from 'vue';
-
 import gjson from '@/lib/gejson';
 
 const props = defineProps({
@@ -12,7 +10,6 @@ const props = defineProps({
 
 const layerId = 'default-marker';
 const custom = ref([]);
-
 
 const handleJson = () => {
   const lineStringFeatures = gjson.features.filter(feature => feature.properties.name === 'Marker Default');
@@ -35,6 +32,5 @@ onMounted(() => {
       custom.value = [];
     }
   });
-
 });
 </script>

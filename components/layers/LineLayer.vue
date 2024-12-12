@@ -34,7 +34,6 @@ onMounted(() => {
   });
 
   props.map.setLayoutProperty(layerId, 'visibility', 'none');
-
   props.map.on('click', layerId, (e) => {
     const coordinates = e.lngLat;
     new maplibregl.Popup()
