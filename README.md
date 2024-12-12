@@ -1,7 +1,23 @@
 # CIRCLEGEO TEST
 ## Setup
-Tambahkan file .env di root project dengan isi sebagai berikut:
-```bash
-KEY=your_key_maptiler
+Buat file .env di root project lalu isi dengan key maptiler:
+
 ```
-[Link Maptiler](https://www.maptiler.com/)
+KEY=your_key_maptiler
+
+```
+
+```
+untuk mendapatkan KEY bisa mengunjungi [https://www.maptiler.com/](https://www.maptiler.com/)
+
+```
+Install dependencies:
+```
+yarn install
+
+```
+## Run
+```
+yarn run dev
+```
+
